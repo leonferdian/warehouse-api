@@ -16,3 +16,8 @@ type LocationWithUsage struct {
 	Available    int `json:"available"`
 }
 
+type CreateLocationRequest struct {
+	Code     string `json:"code" binding:"required"`
+	Name     string `json:"name" binding:"required"`
+	Capacity int    `json:"capacity" binding:"required,gt=0"`
+}

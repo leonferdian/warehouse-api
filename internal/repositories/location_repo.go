@@ -38,6 +38,19 @@ func (r *LocationRepository) GetByID(id int) (*models.Location, error) {
 	return location, err
 }
 
+func (r *LocationRepository) GetByCode(code string) (*models.Location, error) {
+	location := &models.Location{}
+	query := `SELECT id, code, name, capacity, created_at FROM locations WHERE code = $1`
+	err := r.db.QueryRow(query, code).Scan(
+		&location.ID, &location.Code, &location.Name,
+		&location.Capacity, &location.CreatedAt,
+	)
+	if err == sql.ErrNoRows {
+		return nil, nil
+	}
+	return location, err
+}
+
 func (r *LocationRepository) GetAll() ([]*models.LocationWithUsage, error) {
 	query := `
 		SELECT 

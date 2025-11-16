@@ -81,6 +81,7 @@ func main() {
 
 		// Locations
 		protected.GET("/locations", locationHandler.GetAll)
+		protected.POST("/locations", locationHandler.Create)
 
 		// Stock Movements
 		protected.POST("/stock-movements", stockHandler.Create)

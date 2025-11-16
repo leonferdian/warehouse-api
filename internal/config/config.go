@@ -23,13 +23,16 @@ var DB *sql.DB
 
 func LoadConfig() (*Config, error) {
 	// Load .env file if it exists
-	_ = godotenv.Load()
+	if err := godotenv.Load(); err != nil {
+		// .env file is optional, continue with defaults or environment variables
+		_ = err
+	}
 
 	config := &Config{
-		DBHost:     getEnv("DB_HOST", "db.pnlcheslucpptcrwcauf.supabase.co"),
+		DBHost:     getEnv("DB_HOST", "aws-1-ap-south-1.pooler.supabase.com"),
 		DBPort:     getEnv("DB_PORT", "5432"),
-		DBUser:     getEnv("DB_USER", "postgres"),
-		DBPassword: getEnv("DB_PASSWORD", "leonferdian@supabase"),
+		DBUser:     getEnv("DB_USER", "postgres.pnlcheslucpptcrwcauf"),
+		DBPassword: getEnv("DB_PASSWORD", "it.supabase"),
 		DBName:     getEnv("DB_NAME", "postgres"),
 		JWTSecret:  getEnv("JWT_SECRET", "your-secret-key-change-in-production"),
 		Port:       getEnv("PORT", "8080"),
