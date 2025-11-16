@@ -1,3 +1,6 @@
+# If you prefer the allow list template instead of the deny list, see community template:
+# https://github.com/github/gitignore/blob/main/community/Golang/Go.AllowList.gitignore
+#
 # Binaries for programs and plugins
 *.exe
 *.exe~
@@ -10,12 +13,16 @@
 
 # Output of the go coverage tool
 *.out
+coverage.*
+*.coverprofile
+profile.cov
 
 # Dependency directories
 vendor/
 
 # Go workspace file
 go.work
+go.work.sum
 
 # Environment variables
 .env
@@ -34,4 +41,3 @@ Thumbs.db
 # Build output
 main
 warehouse-api
-
