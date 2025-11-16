@@ -66,12 +66,12 @@ cp .env.example .env
 
 4. Update `.env` with your database credentials:
 ```env
-DB_HOST=db.pnlcheslucpptcrwcauf.supabase.co
+DB_HOST=aws-1-ap-south-1.pooler.supabase.com
 DB_PORT=5432
-DB_USER=postgres
-DB_PASSWORD=leonferdian@supabase
+DB_USER=postgres.pnlcheslucpptcrwcauf
+DB_PASSWORD=it.supabase
 DB_NAME=postgres
-JWT_SECRET=your-secret-key-here
+JWT_SECRET=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6ImFkbWluIiwiaXNzIjoiIiwiZXhwIjoxNzAwMjUyMTY1LCJpYXQiOjE3MDAxNjU3NjV9.2e8c1e8d1c9f8a7b6c5d4e3f2a1b0c9d8e7f6a5b4c3d2e1f0a9b8c7d6e5f4a3
 PORT=8080
 ```
 
